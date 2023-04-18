@@ -21,19 +21,24 @@ head
   link(rel="shortcut icon", href="icons/favicon.ico", type="image/x-icon")
   link(rel="manifest", href="manifest.json")
 
+- var urlReservas   = 'https://belliata.es/online-booking?vi=79184'
+- var urlInstagram  = 'https://www.instagram.com/mess1ah.studio/'
+- var urlFacebook   = 'https://www.facebook.com/mess1ahbarberstudio/'
+- var urlGoogleMaps = 'https://goo.gl/maps/fCmXVsGYv8Z25CLv8'
+
 body
   #page-container
     #content-wrap 
       header
         a#link-logo(href='index.html')
-          //- img.logo(src='imatges/logo.png', alt='Mess1ah Barber Studio')
+          img.logo(src='imatges/logo.png', alt='Mess1ah Barber Studio')
         input.nav-toggle(id='nav-toggle', type='checkbox')
         nav
           ul
             li
               a(href='#') Inicio
             li
-              a(href='https://belliata.es/online-booking?vi=79184') Reservas
+              a(href=urlReservas) Reservas
             li
               a(href='#horario') Horario
             li
@@ -45,21 +50,25 @@ body
       
       main#content
         section#reservas
-          .carousel
-            .slides
-              img.slide(src="imatges/reserves/1.jpg", alt="Imagen 1")
-              img.slide(src="imatges/reserves/2.jpg", alt="Imagen 2")
-              img.slide(src="imatges/reserves/3.jpg", alt="Imagen 3")
-            .overlay
-              a(href='https://belliata.es/online-booking?vi=79184')
-                button Reservas
-              .trabajos 
-                p Mira en &nbsp;
-                  a(href='https://www.instagram.com/mess1ah.studio/') Instagram
-                  | &nbsp; nuestros últimos trabajos
-                  | &nbsp;
-                  a(href='https://www.instagram.com/mess1ah.studio/')
-                    i.fa-brands.fa-instagram.fa-xl
+          .reservas-container
+            p Una vez hayas probado
+              br
+              | nuestros servicios,
+              br
+              | no querrás ir a ningún otro sitio
+            .arrow-container 
+              .arrow 
+            a(href=urlReservas)
+              button Reservas
+
+
+          .trabajos 
+            p Mira en &nbsp;
+              a(href=urlInstagram) Instagram
+              | &nbsp; nuestros últimos trabajos
+              | &nbsp;
+              a(href=urlInstagram)
+                i.fa-brands.fa-instagram.fa-xl
 
         section#horario
           h1 Horario
@@ -70,10 +79,10 @@ body
             br
             | 15:00 - 20:00
 
-        //- section#servicios
-        //-   div.servicios-container
-        //-     h1 Nuestros Servicios
-        //-     img(src='imatges/servicios/precios.png', alt='Precios')
+        section#servicios
+          div.servicios-container
+            h1 Nuestros Servicios
+            img(src='imatges/servicios/precios.png', alt='Precios')
 
         //- section#servicios
         //-   h1 Servicios
@@ -112,7 +121,7 @@ body
             br
             a(href='tel:931963259') 931 96 32 59
           p
-            a(href='https://goo.gl/maps/fCmXVsGYv8Z25CLv8')
+            a(href=urlGoogleMaps)
               i.fa-sharp.fa-solid.fa-map-location-dot.fa-2xl
             br
             br
@@ -125,7 +134,7 @@ body
     footer
       div#upper-footer
         div.mapa
-          a(href='https://goo.gl/maps/fCmXVsGYv8Z25CLv8')
+          a(href=urlGoogleMaps)
             i.fa-sharp.fa-solid.fa-map-location-dot.fa-2xl
           p
             strong CERDANYOLA DEL VALLÉS
@@ -133,9 +142,9 @@ body
             | C/ De les Escoles 27, Tienda 1
         div#social
           div.social-icons
-            a(href='https://www.instagram.com/mess1ah.studio/')
+            a(href=urlInstagram)
               i.fab.fa-instagram.fa-2xl
-            a(href='https://www.facebook.com/mess1ahbarberstudio/')
+            a(href=urlFacebook)
               i.fab.fa-facebook-square.fa-2xl
           p
             strong @mess1ah.studio
@@ -144,6 +153,5 @@ body
   
 script(src="https://kit.fontawesome.com/3ff2497f73.js" crossorigin="anonymous")
 script(src="js/app.js")
-script(src="js/carousel.js")
 
 

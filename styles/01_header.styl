@@ -4,11 +4,10 @@ header
   z-index: 999
   width: 100%
   margin: 0
-  padding: 10px 0
-  height: 10vh
+  height: 15vh
   display: grid
   align-items: center
-  background-color: rgba(0, 0, 0, 0)
+  background-color: rgba(0, 0, 0, 1)
 
 .logo
   max-width: 67.5vw
@@ -30,26 +29,26 @@ header
   display: flex
   align-items: center
 
-.nav-toggle-label span,
-.nav-toggle-label span::before,
-.nav-toggle-label span::after
-  display: block
-  background: #fff
-  height: 2px
-  width: 2em
-  border-radius: 2px
-  position: relative
+  span
+  span::before,
+  span::after
+    display: block
+    background: #fff
+    height: 2px
+    width: 2em
+    border-radius: 2px
+    position: relative
 
-.nav-toggle-label span::before,
-.nav-toggle-label span::after
-  content: ''
-  position: absolute
+  span::before,
+  span::after
+    content: ''
+    position: absolute
 
-.nav-toggle-label span::before
-  bottom: 7px
-
-.nav-toggle-label span::after
-  top: 7px
+  span::before
+    bottom: 7px
+  
+  span::after
+    top: 7px
 
 nav
   position: absolute
@@ -60,7 +59,7 @@ nav
   transform: scale(1, 0)
   transform-origin: top
   transition: transform 350ms ease-in-out
-  background-color: rgba(0, 0, 0, 0)
+  background-color: rgba(0, 0, 0, 1)
 
 nav ul
   margin: 0

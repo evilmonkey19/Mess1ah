@@ -16,6 +16,20 @@ body {
   flex-direction: column;
   text-align: center;
 }
+h1 {
+  font-size: 7vw;
+  text-decoration: bold;
+  margin: 5px;
+}
+a {
+  color: #fff;
+  font-weight: 700;
+  font-size: 4.5vw;
+}
+p {
+  font-size: 4.5vw;
+  margin-top: 5px;
+}
 section {
   display: flex;
   flex-direction: column;
@@ -26,20 +40,6 @@ section {
   scroll-margin-top: 16vh;
   min-height: 82.5vh;
   padding: 0 3vw;
-}
-body h1 {
-  font-size: 7vw;
-  text-decoration: bold;
-  margin: 5px;
-}
-body a {
-  color: #fff;
-  font-weight: 700;
-  font-size: 4.5vw;
-}
-body p {
-  font-size: 4.5vw;
-  margin-top: 5px;
 }
 #page-container {
   position: relative;
@@ -58,13 +58,13 @@ body p {
     min-height: 30vh;
     padding: 10px;
   }
-  body h1 {
+  h1 {
     font-size: 36px;
   }
-  body a {
+  a {
     font-size: 24px;
   }
-  body p {
+  p {
     font-size: 24px;
   }
   #content {
@@ -81,11 +81,10 @@ header {
   z-index: 999;
   width: 100%;
   margin: 0;
-  padding: 10px 0;
-  height: 10vh;
+  height: 15vh;
   display: grid;
   align-items: center;
-  background-color: rgba(0,0,0,0);
+  background-color: #000;
 }
 .logo {
   max-width: 67.5vw;
@@ -137,7 +136,7 @@ nav {
   transform: scale(1, 0);
   transform-origin: top;
   transition: transform 350ms ease-in-out;
-  background-color: rgba(0,0,0,0);
+  background-color: #000;
 }
 nav ul {
   margin: 0;
@@ -230,35 +229,12 @@ nav a:hover {
   display: grid;
   place-items: center;
   height: 100svh;
-}
-#reservas .carousel {
+  background-image: linear-gradient(to bottom, transparent 90%, #000 100%), url("imatges/angelo_frontal.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-blend-mode: multiply;
+  background-color: rgba(0,0,0,0.75);
   position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-#reservas .slide {
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: left 1s;
-}
-#reservas .slide:first-child {
-  left: 0;
-}
-#reservas .overlay:position: absolute {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
 }
 #reservas .trabajos {
   position: absolute;
@@ -268,6 +244,66 @@ nav a:hover {
   color: #fff;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
+}
+#reservas .reservas-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+#reservas .reservas-container p {
+  text-align: center;
+  font-size: 24px;
+  position: relative;
+  margin: 0;
+}
+#reservas .reservas-container a {
+  position: relative;
+}
+#reservas .reservas-container a button {
+  background-color: rgba(0,0,0,0.5);
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 5vw 10vh;
+  font-size: 18px;
+  transition: all 0.3s ease-in-out;
+}
+#reservas .reservas-container .arrow-container {
+  position: relative;
+  height: 100px;
+  width: 100px;
+}
+#reservas .reservas-container .arrow-container .arrow,
+#reservas .reservas-container .arrow-container .arrow:before {
+  position: absolute;
+  left: 50%;
+}
+#reservas .reservas-container .arrow-container .arrow {
+  width: 60px;
+  height: 60px;
+  top: 42.5%;
+  margin: -30px 0 0 -30px;
+  padding-right: 10px;
+  -webkit-transform: rotate(45deg);
+  border-left: none;
+  border-top: none;
+  border-right: 2px #fff solid;
+  border-bottom: 2px #fff solid;
+}
+#reservas .reservas-container .arrow-container .arrow:before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  margin: -10px 0 0 -10px;
+  border-left: none;
+  border-top: none;
+  border-right: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: arrow;
 }
 @media screen and (min-width: 1180px) {
   #reservas {
