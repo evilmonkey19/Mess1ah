@@ -1,0 +1,24 @@
+{
+    "name": "Mess1ah Barber Studio",
+    "short_name": "Mess1ah",
+    "start_url": "https://mess1ah.com",
+    "id": "com.mess1ah",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#db4938",
+    "orientation": "portrait-primary",
+    "icons": [
+      {
+        "src": "/icons/android-chrome-192x192.png",
+        "type": "image/png", "sizes": "192x192"
+      },
+      {
+        "src": "/icons/android-chrome-256x256.png",
+        "type": "image/png", "sizes": "256x256"
+      },
+      {
+        "src": "/icons/apple-touch-icon-180x180.png",
+        "type": "image/png","sizes": "180x180"
+      }
+    ]
+  }

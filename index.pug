@@ -1,0 +1,149 @@
+doctype html
+html(lang="es")
+head
+  title Mess1ah
+  meta(charset="utf-8")
+  meta(http-equiv="X-UA-Compatible", content="IE=edge")
+  meta(name="viewport", content="width=device-width, initial-scale=1")
+  meta(name="description", content="Mess1ah Barber Studio")
+  meta(name="color-scheme", content="light dark")
+  meta(name="author", content="Enric Perpinyà Pitarch & Josep Natta Palou")
+  link(rel="stylesheet", type="text/css", href="styles.css")
+  link(rel="apple-touch-icon", sizes="180x180", href="icons/apple-touch-icon.png")
+  link(rel="icon", type="image/png", sizes="32x32", href="icons/favicon-32x32.png")
+  link(rel="icon", type="image/png", sizes="16x16", href="icons/favicon-16x16.png")
+  link(rel="manifest", href="icons/site.webmanifest")
+  link(rel="mask-icon", href="icons/safari-pinned-tab.svg", color="#5bbad5")
+  meta(name="apple-mobile-web-app-title", content="Mess1ah")
+  meta(name="application-name", content="Mess1ah")
+  meta(name="msapplication-TileColor", content="#da532c")
+  meta(name="theme-color", content="#ffffff")
+  link(rel="shortcut icon", href="icons/favicon.ico", type="image/x-icon")
+  link(rel="manifest", href="manifest.json")
+
+body
+  #page-container
+    #content-wrap 
+      header
+        a#link-logo(href='index.html')
+          //- img.logo(src='imatges/logo.png', alt='Mess1ah Barber Studio')
+        input.nav-toggle(id='nav-toggle', type='checkbox')
+        nav
+          ul
+            li
+              a(href='#') Inicio
+            li
+              a(href='https://belliata.es/online-booking?vi=79184') Reservas
+            li
+              a(href='#horario') Horario
+            li
+              a(href='#servicios') Servicios
+            li
+              a(href='#contacto') Contacto
+        label.nav-toggle-label(for='nav-toggle')
+          span
+      
+      main#content
+        section#reservas
+          .carousel
+            .slides
+              img.slide(src="imatges/reserves/1.jpg", alt="Imagen 1")
+              img.slide(src="imatges/reserves/2.jpg", alt="Imagen 2")
+              img.slide(src="imatges/reserves/3.jpg", alt="Imagen 3")
+            .overlay
+              a(href='https://belliata.es/online-booking?vi=79184')
+                button Reservas
+              .trabajos 
+                p Mira en &nbsp;
+                  a(href='https://www.instagram.com/mess1ah.studio/') Instagram
+                  | &nbsp; nuestros últimos trabajos
+                  | &nbsp;
+                  a(href='https://www.instagram.com/mess1ah.studio/')
+                    i.fa-brands.fa-instagram.fa-xl
+
+        section#horario
+          h1 Horario
+          p
+            strong Lunes a Sábado
+            br
+            | 09:00 - 13:00
+            br
+            | 15:00 - 20:00
+
+        //- section#servicios
+        //-   div.servicios-container
+        //-     h1 Nuestros Servicios
+        //-     img(src='imatges/servicios/precios.png', alt='Precios')
+
+        //- section#servicios
+        //-   h1 Servicios
+        //-   .carousel-container
+        //-     .carousel.my-carousel.carousel--translate
+        //-       - var panels = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
+        //-       each val in panels
+        //-         input.carousel__activator(type="radio", name="carousel", id=val, checked=(val == panels[0]))
+        //-       each val, idx in panels
+        //-         .carousel__controls
+        //-           label.carousel__control.carousel__control--backward(for=`${(idx == 0) ? panels[panels.length - 1] : panels[idx - 1]}` )
+        //-           label.carousel__control.carousel__control--forward(for= `${(idx == panels.length - 1) ? panels[0] : panels[idx + 1]}`)
+        //-       .carousel__track
+        //-         each val in panels
+        //-           li.carousel__slide
+        //-       .carousel__indicators
+        //-         each val in panels
+        //-           label.carousel__indicator(for=val)
+
+        section#contacto
+          h1 Contacto
+          p
+            i.fa-solid.fa-envelope.fa-2xl
+            br
+            br
+            | Email:
+            br
+            a(href='mailto:mess1ah@info.com') mess1ah@info.com
+          p
+            i.fa-solid.fa-phone-volume.fa-2xl
+            | &nbsp;&nbsp;/&nbsp;&nbsp;
+            i.fa-brands.fa-whatsapp.fa-2xl
+            br
+            br
+            | Teléfono / Whatsapp:
+            br
+            a(href='tel:931963259') 931 96 32 59
+          p
+            a(href='https://goo.gl/maps/fCmXVsGYv8Z25CLv8')
+              i.fa-sharp.fa-solid.fa-map-location-dot.fa-2xl
+            br
+            br
+            | Dirección:
+            br
+            strong CERDANYOLA DEL VALLÉS
+            br
+            | C/ De les Escoles 27, Tienda 1
+
+    footer
+      div#upper-footer
+        div.mapa
+          a(href='https://goo.gl/maps/fCmXVsGYv8Z25CLv8')
+            i.fa-sharp.fa-solid.fa-map-location-dot.fa-2xl
+          p
+            strong CERDANYOLA DEL VALLÉS
+            br
+            | C/ De les Escoles 27, Tienda 1
+        div#social
+          div.social-icons
+            a(href='https://www.instagram.com/mess1ah.studio/')
+              i.fab.fa-instagram.fa-2xl
+            a(href='https://www.facebook.com/mess1ahbarberstudio/')
+              i.fab.fa-facebook-square.fa-2xl
+          p
+            strong @mess1ah.studio
+      p.copyright &copy;Mess1ah Barber Studio
+      br
+  
+script(src="https://kit.fontawesome.com/3ff2497f73.js" crossorigin="anonymous")
+script(src="js/app.js")
+script(src="js/carousel.js")
+
+

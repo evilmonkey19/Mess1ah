@@ -1,0 +1,43 @@
+#colaboradores
+  padding-bottom: 5%
+
+  .colaboradores
+    display: flex
+    flex-direction: column
+    flex-wrap: column nowrap
+    justify-content: center
+    align-items: center
+    align-content: center
+    margin: 10px
+    gap: 20px
+
+    a
+      width: 77.5vw
+      max-height: 100%
+      border-top-left-radius: 10px
+      border-top-right-radius: 20px
+      border-bottom-left-radius: 20px
+      border-bottom-right-radius: 10px
+      border: 1px solid #fff
+      background-size: cover
+      background-position: center center
+      background-blend-mode: multiply
+      background-color: rgba(255, 255, 255, 0.92)
+      transition: all 0.5s ease 0s
+      text-decoration: none
+
+    img
+      margin: 10px
+      max-width: 75%
+      max-height: 75%
+
+      &:hover
+        transform: scale(1.1)
+
+      &:active
+        transform: scale(0.9)
+        opacity: 0.8
+
+  @media screen and (min-width: 1180px)
+    .colaboradores a
+      width: 30vw

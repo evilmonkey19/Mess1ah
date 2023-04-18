@@ -1,0 +1,74 @@
+@import "https://fonts.googleapis.com/css2?family=PT+Sans&display=swap"
+
+*,*::before,*::after
+  box-sizing:         border-box
+  -webkit-box-sizing: border-box
+
+body 
+  margin: 0
+  background-color: black;
+  color: #fff
+  font-family: pt sans, sans-serif
+  font-weight: 400
+  -webkit-font-smoothing: antialiased
+  display: flex
+  flex-direction: column
+  text-align: center
+
+section
+  display: flex
+  flex-direction: column
+  justify-content: center
+  place-items: center
+  border: 1px solid #fff
+  margin: 3vh 5vw
+  scroll-margin-top: 16vh
+  min-height: 82.5vh
+  padding: 0 3vw
+
+body h1
+  font-size: 7vw
+  text-decoration: bold
+  margin: 5px
+
+body a
+  color: #fff
+  font-weight: 700
+  font-size: 4.5vw
+
+body p
+  font-size: 4.5vw
+  margin-top: 5px
+
+#page-container
+  position: relative
+  min-height: 100vh
+
+#content-wrap
+  padding-bottom: 15rem
+
+#content
+  top: 100%
+
+@media screen and (min-width: 1180px)
+  section
+    width: 40vw
+    overflow: hidden
+    min-height: 30vh
+    padding: 10px
+
+  body h1
+    font-size: 36px
+
+  body a
+    font-size: 24px
+
+  body p
+    font-size: 24px
+
+  #content
+    display: grid
+    justify-content: center
+    align-items: center
+    justify-items: center
+    grid-template-columns: 1fr

@@ -1,0 +1,83 @@
+#upper-footer
+  display: flex
+  flex-direction: column
+
+.mapa
+  display: flex
+  align-items: center
+  justify-content: center
+
+  i
+    padding-right: 20px
+
+  a
+    text-decoration: none
+    color: #fff
+
+#social
+  display: flex
+  flex-direction: column
+
+  p
+    align-self: center
+
+  .social-icons
+    display: grid
+    grid-template-columns: repeat(2, auto)
+    justify-content: center
+    gap: 20px
+    padding-top: 25px
+
+    a
+      text-decoration: none
+      color: #fff
+
+    i
+      text-decoration: none
+      color: #fff
+
+.copyright
+  text-align: center
+  padding-top: 10px
+
+@media screen and (min-width: 1180px)
+  footer
+    height: 10rem
+
+  #content-wrap
+    padding-bottom: 10rem
+
+  #upper-footer
+    flex-direction: row
+    justify-content: center
+    gap: 3rem
+
+    &::before
+      content: ""
+      position: absolute
+      width: 1px
+      height: 50px
+      background-color: #fff
+      margin-top: 10px
+
+  .mapa
+    padding-left: 2em
+
+    i
+      transition: transform 0.3s ease-in-out
+
+    i:hover
+      transform: scale(1.8)
+
+  #social
+    padding-left: 50px
+    flex-direction: row
+    justify-content: center
+    gap: 15px
+    padding-right: 6em
+
+  .social-icons i
+    transition: transform 0.3s ease-in-out
+
+  .social-icons i:hover
+    transform: scale(1.8)

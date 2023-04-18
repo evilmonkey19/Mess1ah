@@ -1,0 +1,185 @@
+#servicios
+  gap: 0
+  min-height: unset
+
+  .servicios-container
+    display         flex
+    flex-direction  column
+    justify-content center
+    align-items     center
+  
+  img 
+    width           100%
+    height          100%
+    border-radius   10px;
+
+// https://codepen.io/jh3y/pen/WwVKLN?editors=0100
+
+/**
+  * style variables
+*/
+$noOfSlides            = 10
+$carouselMinHeight     = 62.5vh
+$carouselMaxHeight     = 65vh
+$carouselWidth         = 35vw
+$carouselIndicatorSize = 15px
+$carouselControlSize   = 30px
+$slideTransition       = .5s
+
+/**
+  * Control & indicator mixin
+*/
+.carousel
+  min-height  $carouselMinHeight
+  max-height  $carouselMaxHeight
+  width       $carouselWidth
+  overflow    hidden
+  text-align  center
+  position    relative
+  padding     0
+  list-style  none
+  padding     0%
+  margin      0 0 10px
+
+  // &__slide
+  &__controls
+  &__activator
+    display none
+
+  /**
+  * Where the magic happens
+  */
+  for num in 1..$noOfSlides
+    &__activator:nth-of-type({num})
+      &:checked ~ .carousel__track
+        transform translateX(-((num - 1) * 100%))
+      &:checked ~ .carousel__slide:nth-of-type({num})
+        transition opacity $slideTransition, transform $slideTransition
+        top 0
+        left 0
+        right 0
+        opacity 1
+        transform scale(1)
+      &:checked ~ .carousel__controls:nth-of-type({num})
+        display block
+        opacity 1
+      &:checked ~ .carousel__indicators .carousel__indicator:nth-of-type({num})
+        opacity 1
+
+  /**
+    * Control element - right/left arrows
+  */
+  &__control
+    height       $carouselControlSize
+    width        $carouselControlSize
+    margin-top   -($carouselControlSize / 2)
+    top          50%
+    position     absolute
+    display      block
+    cursor       pointer
+    border-width 5px 5px 0 0
+    border-style solid
+    border-color #fafafa
+    opacity      .35
+    outline      0
+    z-index      3
+
+    &:hover
+      opacity 1
+
+    &--backward
+      left      10px
+      transform rotate(-135deg)
+
+    &--forward
+      right     10px
+      transform rotate(45deg)
+
+  /**
+    * Element for holding slide indicators
+  */
+  &__indicators
+    position   absolute
+    bottom     20px
+    width      100%
+    text-align center
+
+  /**
+    * Indicator for indicating active slide
+  */
+  &__indicator
+    height        $carouselIndicatorSize
+    width         $carouselIndicatorSize
+    border-radius 100%
+    display       inline-block
+    z-index       2
+    cursor        pointer
+    opacity       .35
+    margin        0 2.5px 0 2.5px
+    &:hover
+      opacity     .75
+
+  /**
+    * Create rules for when slides are contained within a track
+  */
+  &__track
+    position absolute
+    top      0
+    right    0
+    bottom   0
+    left     0
+    padding  0
+    margin   0
+    transition transform $slideTransition ease 0s
+
+    .carousel__slide
+      display block
+      top     0
+      left    0
+      right   0
+      opacity 1
+      for num in (1..$noOfSlides)
+        &:nth-of-type({num})
+          transform translateX((num - 1) * 100%)
+
+  &--scale
+    .carousel__slide
+      transform scale(0)
+
+  &__slide
+    height     100%
+    position   absolute
+    overflow-y auto
+    opacity 0
+
+/**
+  * Theming
+*/
+
+.carousel-container
+  display       inline-block
+
+.my-carousel
+  border-radius 5px
+  margin        30px
+
+.carousel__slide
+  overflow      hidden
+
+.carousel
+  &--thumb .carousel__indicator
+    height 30px
+    width  30px
+
+.carousel__indicator
+  background-color #fafafa
+
+for num in (1..$noOfSlides)
+  .carousel__slide:nth-of-type({num})
+  .carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type({num})
+    // multiply to get better quality pics
+    background-size cover
+    background-position center
+    background-blend-mode multiply
+    background-color rgba(0, 0, 0, .6)
+    background-image url('imatges/servicios/' + (num % 2) + '.png')
