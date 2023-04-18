@@ -8,7 +8,10 @@
   Access-Control-Allow-Origin: *
   X-Robots-Tag: nosnippet
 
-/js/*.js
+/js/serviceWorker.js
+  Content-Type: application/javascript; charset=UTF-8
+
+/js/app.js
   Content-Type: text/javascript; charset=UTF-8
 
 /imatges/*.png
