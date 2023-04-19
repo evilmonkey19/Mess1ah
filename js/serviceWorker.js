@@ -1,4 +1,4 @@
-const staticMess1ah = "mess1ah-site-v1"
+const staticMess1ah = "mess1ah-site"
 const assets = [
   "/",
   "/index.html",
