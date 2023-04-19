@@ -1,0 +1,30 @@
+# This is a comment
+/
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+
+/*
+  Access-Control-Allow-Origin: *
+  X-Robots-Tag: nosnippet
+
+/js/serviceWorker.js
+  Content-Type: application/javascript; charset=UTF-8
+
+/js/app.js
+  Content-Type: text/javascript; charset=UTF-8
+
+/imatges/*.png
+  Content-Type: image/png
+
+/imatges/*.svg
+  Content-Type: image/svg+xml
+
+/imatges/*.jpg
+  Content-Type: image/jpeg
+
+/*.css
+  Content-Type: text/css; charset=UTF-8
+
+https://myproject.pages.dev/*
+  X-Robots-Tag: noindex
