@@ -5,7 +5,7 @@
   "background_color": "#ffffff",
   "display": "standalone",
   "orientation": "portrait",
-  "start_url": "/",
+  "start_url": "index.html",
   "icons": [
     {
       "src": "/imatges/favicons/icon-72x72.png",
