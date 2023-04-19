@@ -1,40 +1,39 @@
 {
-    "name": "Mess1ah",
-    "short_name": "Mess1ah",
-    "description": "Mess1ah Barber Studio",
-    "start_url": "index.html",
-    "display": "standalone",
-    "orientation": "portrait",
-    "background_color": "#ffffff",
-    "theme_color": "#db4938",
-    "id": "com.mess1ah",
-    "icons": [
-      {
-        "src": "/icons/apple-touch-icon.png",
-        "sizes": "180x180",
-        "type": "image/png"
-      },
-      {
-        "src": "/icons/favicon-32x32.png",
-        "sizes": "32x32",
-        "type": "image/png"
-      },
-      {
-        "src": "/icons/favicon-16x16.png",
-        "sizes": "16x16",
-        "type": "image/png"
-      },
-      {
-        "src": "/icons/android-chrome-192x192.png",
-        "type": "image/png", "sizes": "192x192"
-      },
-      {
-        "src": "/icons/android-chrome-256x256.png",
-        "type": "image/png", "sizes": "256x256"
-      },
-      {
-        "src": "/icons/apple-touch-icon-180x180.png",
-        "type": "image/png","sizes": "180x180"
-      }
-    ]
-  }
+  "name": "Mess1ah",
+  "short_name": "Mess1ah",
+  "description": "Mess1ah Barber Studio",
+  "start_url": "index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#db4938",
+  "icons": [
+    {
+      "src": "/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/android-chrome-192x192.png",
+      "type": "image/png", "sizes": "192x192"
+    },
+    {
+      "src": "/icons/android-chrome-256x256.png",
+      "type": "image/png", "sizes": "256x256"
+    },
+    {
+      "src": "/icons/apple-touch-icon-180x180.png",
+      "type": "image/png","sizes": "180x180"
+    }
+  ]
+}
