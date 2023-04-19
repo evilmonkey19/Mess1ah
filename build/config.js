@@ -4,8 +4,8 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-const injectedStartUrl = process.env.START_URL;
+// const injectedStartUrl = process.env.START_URL;
 
-manifest.start_url = injectedStartUrl;
+// manifest.start_url = injectedStartUrl;
 
-fs.writeFileSync("../manifest.json", JSON.stringify(manifest, null, 2));
+// fs.writeFileSync("../manifest.json", JSON.stringify(manifest, null, 2));
