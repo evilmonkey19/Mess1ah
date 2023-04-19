@@ -1,160 +1,160 @@
 doctype html
 html(lang="es")
-head
-  title Mess1ah
-  meta(charset="utf-8")
-  meta(http-equiv="X-UA-Compatible", content="IE=edge")
-  meta(name="viewport", content="width=device-width, initial-scale=1")
-  meta(name="description", content="Mess1ah Barber Studio")
-  meta(name="color-scheme", content="light dark")
-  meta(name="author", content="Enric Perpinyà Pitarch & Josep Natta Palou")
-  meta(name="application-name", content="Mess1ah")
-  meta(name="theme-color", content="#ffffff")
+  head
+    title Mess1ah
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(name="description", content="Mess1ah Barber Studio")
+    meta(name="color-scheme", content="light dark")
+    meta(name="author", content="Enric Perpinyà Pitarch & Josep Natta Palou")
+    meta(name="application-name", content="Mess1ah")
+    meta(name="theme-color", content="#ffffff")
 
-  link(rel="stylesheet", type="text/css", href="/styles.css")
-  link(rel="icon", type="image/x-icon", href="/favicon.ico")
-  link(rel="icon", type="image/png", sizes="72x72", href="/imatges/favicons/icon-72x72.png")
-  link(rel="icon", type="image/png", sizes="96x96", href="/imatges/favicons/icon-96x96.png")
-  link(rel="icon", type="image/png", sizes="128x128", href="/imatges/favicons/icon-128x128.png")
-  link(rel="icon", type="image/png", sizes="144x144", href="/imatges/favicons/icon-144x144.png")
-  link(rel="icon", type="image/png", sizes="152x152", href="/imatges/favicons/icon-152x152.png")
-  link(rel="icon", type="image/png", sizes="192x192", href="/imatges/favicons/icon-192x192.png")
-  link(rel="icon", type="image/png", sizes="384x384", href="/imatges/favicons/icon-384x384.png")
-  link(rel="icon", type="image/png", sizes="512x512", href="/imatges/favicons/icon-512x512.png")
-  link(rel="apple-touch-icon", href="/imatges/favicons/icon-96x96.png")
-  link(rel="manifest", href="manifest.json")
+    link(rel="stylesheet", type="text/css", href="/styles.css")
+    link(rel="icon", type="image/x-icon", href="/favicon.ico")
+    link(rel="icon", type="image/png", sizes="72x72", href="/imatges/favicons/icon-72x72.png")
+    link(rel="icon", type="image/png", sizes="96x96", href="/imatges/favicons/icon-96x96.png")
+    link(rel="icon", type="image/png", sizes="128x128", href="/imatges/favicons/icon-128x128.png")
+    link(rel="icon", type="image/png", sizes="144x144", href="/imatges/favicons/icon-144x144.png")
+    link(rel="icon", type="image/png", sizes="152x152", href="/imatges/favicons/icon-152x152.png")
+    link(rel="icon", type="image/png", sizes="192x192", href="/imatges/favicons/icon-192x192.png")
+    link(rel="icon", type="image/png", sizes="384x384", href="/imatges/favicons/icon-384x384.png")
+    link(rel="icon", type="image/png", sizes="512x512", href="/imatges/favicons/icon-512x512.png")
+    link(rel="apple-touch-icon", href="/imatges/favicons/icon-96x96.png")
+    link(rel="manifest", href="manifest.json")
 
-- var urlReservas   = 'https://booksy.com/es-es/instant-experiences/widget/62728?instant_experiences_enabled=true&ig_ix=true&is_fb=1'
-- var urlInstagram  = 'https://www.instagram.com/mess1ah.studio/'
-- var urlFacebook   = 'https://www.facebook.com/mess1ahbarberstudio/'
-- var urlGoogleMaps = 'https://goo.gl/maps/fCmXVsGYv8Z25CLv8'
+  - var urlReservas   = 'https://booksy.com/es-es/instant-experiences/widget/62728?instant_experiences_enabled=true&ig_ix=true&is_fb=1'
+  - var urlInstagram  = 'https://www.instagram.com/mess1ah.studio/'
+  - var urlFacebook   = 'https://www.facebook.com/mess1ahbarberstudio/'
+  - var urlGoogleMaps = 'https://goo.gl/maps/fCmXVsGYv8Z25CLv8'
 
-body
-  #page-container
-    #content-wrap 
-      header
-        a#link-logo(href='index.html')
-          img.logo(src='/imatges/logo.png', alt='Mess1ah Barber Studio')
-        input.nav-toggle(id='nav-toggle', type='checkbox')
-        nav
-          ul
-            li
-              a(href='#') Inicio
-            li
-              a(href=urlReservas) Reservas
-            li
-              a(href='#horario') Horario
-            li
-              a(href='#servicios') Servicios
-            li
-              a(href='#contacto') Contacto
-        label.nav-toggle-label(for='nav-toggle')
-          span
-      
-      main#content
-        section#reservas
-          .reservas-container
-            p Una vez hayas probado
+  body
+    #page-container
+      #content-wrap 
+        header
+          a#link-logo(href='index.html')
+            img.logo(src='/imatges/logo.png', alt='Mess1ah Barber Studio')
+          input.nav-toggle(id='nav-toggle', type='checkbox')
+          nav
+            ul
+              li
+                a(href='#') Inicio
+              li
+                a(href=urlReservas) Reservas
+              li
+                a(href='#horario') Horario
+              li
+                a(href='#servicios') Servicios
+              li
+                a(href='#contacto') Contacto
+          label.nav-toggle-label(for='nav-toggle')
+            span
+        
+        main#content
+          section#reservas
+            .reservas-container
+              p Una vez hayas probado
+                br
+                | nuestros servicios,
+                br
+                | no querrás ir a ningún otro sitio
+              .arrow-container 
+                .arrow 
+              a(href=urlReservas)
+                button Reservas
+
+
+            .trabajos 
+              p Mira en &nbsp;
+                a(href=urlInstagram) Instagram
+                | &nbsp; nuestros últimos trabajos
+                | &nbsp;
+                a(href=urlInstagram)
+                  i.fa-brands.fa-instagram.fa-xl
+
+          section#horario
+            h1 Horario
+            p
+              strong Lunes a Sábado
               br
-              | nuestros servicios,
+              | 09:00 - 13:00
               br
-              | no querrás ir a ningún otro sitio
-            .arrow-container 
-              .arrow 
-            a(href=urlReservas)
-              button Reservas
+              | 15:00 - 20:00
 
+          section#servicios
+            div.servicios-container
+              h1 Nuestros Servicios
+              img(src='/imatges/precios.png', alt='Precios')
 
-          .trabajos 
-            p Mira en &nbsp;
-              a(href=urlInstagram) Instagram
-              | &nbsp; nuestros últimos trabajos
-              | &nbsp;
-              a(href=urlInstagram)
-                i.fa-brands.fa-instagram.fa-xl
+          //- section#servicios
+          //-   h1 Servicios
+          //-   .carousel-container
+          //-     .carousel.my-carousel.carousel--translate
+          //-       - var panels = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
+          //-       each val in panels
+          //-         input.carousel__activator(type="radio", name="carousel", id=val, checked=(val == panels[0]))
+          //-       each val, idx in panels
+          //-         .carousel__controls
+          //-           label.carousel__control.carousel__control--backward(for=`${(idx == 0) ? panels[panels.length - 1] : panels[idx - 1]}` )
+          //-           label.carousel__control.carousel__control--forward(for= `${(idx == panels.length - 1) ? panels[0] : panels[idx + 1]}`)
+          //-       .carousel__track
+          //-         each val in panels
+          //-           li.carousel__slide
+          //-       .carousel__indicators
+          //-         each val in panels
+          //-           label.carousel__indicator(for=val)
 
-        section#horario
-          h1 Horario
-          p
-            strong Lunes a Sábado
-            br
-            | 09:00 - 13:00
-            br
-            | 15:00 - 20:00
+          section#contacto
+            h1 Contacto
+            p
+              i.fa-solid.fa-envelope.fa-2xl
+              br
+              br
+              | Email:
+              br
+              a(href='mailto:mess1ah@info.com') mess1ah@info.com
+            p
+              i.fa-solid.fa-phone-volume.fa-2xl
+              | &nbsp;&nbsp;/&nbsp;&nbsp;
+              i.fa-brands.fa-whatsapp.fa-2xl
+              br
+              br
+              | Teléfono / Whatsapp:
+              br
+              a(href='tel:931963259') 931 96 32 59
+            p
+              a(href=urlGoogleMaps)
+                i.fa-sharp.fa-solid.fa-map-location-dot.fa-2xl
+              br
+              br
+              | Dirección:
+              br
+              strong CERDANYOLA DEL VALLÉS
+              br
+              | C/ De les Escoles 27, Tienda 1
 
-        section#servicios
-          div.servicios-container
-            h1 Nuestros Servicios
-            img(src='/imatges/precios.png', alt='Precios')
-
-        //- section#servicios
-        //-   h1 Servicios
-        //-   .carousel-container
-        //-     .carousel.my-carousel.carousel--translate
-        //-       - var panels = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
-        //-       each val in panels
-        //-         input.carousel__activator(type="radio", name="carousel", id=val, checked=(val == panels[0]))
-        //-       each val, idx in panels
-        //-         .carousel__controls
-        //-           label.carousel__control.carousel__control--backward(for=`${(idx == 0) ? panels[panels.length - 1] : panels[idx - 1]}` )
-        //-           label.carousel__control.carousel__control--forward(for= `${(idx == panels.length - 1) ? panels[0] : panels[idx + 1]}`)
-        //-       .carousel__track
-        //-         each val in panels
-        //-           li.carousel__slide
-        //-       .carousel__indicators
-        //-         each val in panels
-        //-           label.carousel__indicator(for=val)
-
-        section#contacto
-          h1 Contacto
-          p
-            i.fa-solid.fa-envelope.fa-2xl
-            br
-            br
-            | Email:
-            br
-            a(href='mailto:mess1ah@info.com') mess1ah@info.com
-          p
-            i.fa-solid.fa-phone-volume.fa-2xl
-            | &nbsp;&nbsp;/&nbsp;&nbsp;
-            i.fa-brands.fa-whatsapp.fa-2xl
-            br
-            br
-            | Teléfono / Whatsapp:
-            br
-            a(href='tel:931963259') 931 96 32 59
-          p
+      footer
+        div#upper-footer
+          div.mapa
             a(href=urlGoogleMaps)
               i.fa-sharp.fa-solid.fa-map-location-dot.fa-2xl
-            br
-            br
-            | Dirección:
-            br
-            strong CERDANYOLA DEL VALLÉS
-            br
-            | C/ De les Escoles 27, Tienda 1
-
-    footer
-      div#upper-footer
-        div.mapa
-          a(href=urlGoogleMaps)
-            i.fa-sharp.fa-solid.fa-map-location-dot.fa-2xl
-          p
-            strong CERDANYOLA DEL VALLÉS
-            br
-            | C/ De les Escoles 27, Tienda 1
-        div#social
-          div.social-icons
-            a(href=urlInstagram)
-              i.fab.fa-instagram.fa-2xl
-            a(href=urlFacebook)
-              i.fab.fa-facebook-square.fa-2xl
-          p
-            strong @mess1ah.studio
-      p.copyright &copy;Mess1ah Barber Studio
-      br
-  
-script(src="https://kit.fontawesome.com/3ff2497f73.js" crossorigin="anonymous")
-script(src="js/app.js")
+            p
+              strong CERDANYOLA DEL VALLÉS
+              br
+              | C/ De les Escoles 27, Tienda 1
+          div#social
+            div.social-icons
+              a(href=urlInstagram)
+                i.fab.fa-instagram.fa-2xl
+              a(href=urlFacebook)
+                i.fab.fa-facebook-square.fa-2xl
+            p
+              strong @mess1ah.studio
+        p.copyright &copy;Mess1ah Barber Studio
+        br
+    
+  script(src="https://kit.fontawesome.com/3ff2497f73.js" crossorigin="anonymous")
+  script(src="js/app.js")
 
 
