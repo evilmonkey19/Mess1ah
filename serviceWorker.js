@@ -1,29 +1,29 @@
-const staticMess1ah = "mess1ah-site"
+const staticMess1ah = "mess1ah-site";
 const mainAssets = [
   "/",
   "/index.html",
   "/styles.css",
   "/manifest.json",
   "/js/app.js",
-]
+];
 
-self.addEventListener("install", installEvent => {
+self.addEventListener("install", (installEvent) => {
   installEvent.waitUntil(
     fetch("/assets.json")
       .then((response) => response.json())
       .then((assetsData) => {
         const assetsToCache = [...mainAssets, ...assetsData.assets];
-        caches.open(staticMess1ah).then((cache) => {
-          cache.addAll(assetsToCache);
+        return caches.open(staticMess1ah).then((cache) => {
+          return cache.addAll(assetsToCache);
         });
       })
   );
-})
+});
 
-self.addEventListener("fetch", fetchEvent => {
+self.addEventListener("fetch", (fetchEvent) => {
   fetchEvent.respondWith(
-    caches.match(fetchEvent.request).then(res => {
-      return res || fetch(fetchEvent.request)
+    caches.match(fetchEvent.request).then((res) => {
+      return res || fetch(fetchEvent.request);
     })
-  )
-})
+  );
+});
