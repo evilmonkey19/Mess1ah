@@ -6,6 +6,7 @@
   "display": "standalone",
   "orientation": "portrait",
   "start_url": "index.html",
+  "id": "com.mess1ah.barber",
   "icons": [
     {
       "src": "/imatges/favicons/icon-72x72.png",
