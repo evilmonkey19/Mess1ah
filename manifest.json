@@ -2,7 +2,7 @@
   "name": "Mess1ah",
   "short_name": "Mess1ah",
   "description": "Mess1ah Barber Studio",
-  "start_url": "index.html",
+  "start_url": ".",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#ffffff",
