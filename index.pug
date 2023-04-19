@@ -8,17 +8,20 @@ head
   meta(name="description", content="Mess1ah Barber Studio")
   meta(name="color-scheme", content="light dark")
   meta(name="author", content="Enric Perpinyà Pitarch & Josep Natta Palou")
-  link(rel="stylesheet", type="text/css", href="styles.css")
-  link(rel="apple-touch-icon", sizes="180x180", href="icons/apple-touch-icon.png")
-  link(rel="icon", type="image/png", sizes="32x32", href="icons/favicon-32x32.png")
-  link(rel="icon", type="image/png", sizes="16x16", href="icons/favicon-16x16.png")
-  link(rel="mask-icon", href="icons/safari-pinned-tab.svg", color="#5bbad5")
-  meta(name="apple-mobile-web-app-title", content="Mess1ah")
   meta(name="application-name", content="Mess1ah")
-  meta(name="msapplication-TileColor", content="#da532c")
   meta(name="theme-color", content="#ffffff")
-  link(rel="shortcut icon", href="icons/favicon.ico", type="image/x-icon")
-  link(rel="manifest", href="manifest.json")
+
+  link(rel="manifest", href="/manifest.json")
+  link(rel="stylesheet", type="text/css", href="/styles.css")
+  link(rel="icon", type="image/x-icon", href="/favicon.ico")
+  link(rel="icon", type="image/png", sizes="72x72", href="/imatges/favicons/icon-72x72.png")
+  link(rel="icon", type="image/png", sizes="96x96", href="/imatges/favicons/icon-96x96.png")
+  link(rel="icon", type="image/png", sizes="128x128", href="/imatges/favicons/icon-128x128.png")
+  link(rel="icon", type="image/png", sizes="144x144", href="/imatges/favicons/icon-144x144.png")
+  link(rel="icon", type="image/png", sizes="152x152", href="/imatges/favicons/icon-152x152.png")
+  link(rel="icon", type="image/png", sizes="192x192", href="/imatges/favicons/icon-192x192.png")
+  link(rel="icon", type="image/png", sizes="384x384", href="/imatges/favicons/icon-384x384.png")
+  link(rel="icon", type="image/png", sizes="512x512", href="/imatges/favicons/icon-512x512.png")
 
 - var urlReservas   = 'https://booksy.com/es-es/instant-experiences/widget/62728?instant_experiences_enabled=true&ig_ix=true&is_fb=1'
 - var urlInstagram  = 'https://www.instagram.com/mess1ah.studio/'
@@ -30,7 +33,7 @@ body
     #content-wrap 
       header
         a#link-logo(href='index.html')
-          img.logo(src='imatges/logo.png', alt='Mess1ah Barber Studio')
+          img.logo(src='/imatges/logo.png', alt='Mess1ah Barber Studio')
         input.nav-toggle(id='nav-toggle', type='checkbox')
         nav
           ul
@@ -81,7 +84,7 @@ body
         section#servicios
           div.servicios-container
             h1 Nuestros Servicios
-            img(src='imatges/servicios/precios.png', alt='Precios')
+            img(src='/imatges/precios.png', alt='Precios')
 
         //- section#servicios
         //-   h1 Servicios

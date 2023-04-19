@@ -1,23 +1,23 @@
 const staticMess1ah = "mess1ah-site"
-const assets = [
+const mainAssets = [
   "/",
   "/index.html",
   "/styles.css",
+  "/manifest.json",
   "/js/app.js",
-  "/imatges/firma.svg",
-  "/imatges/angelo_frontal.jpg",
-  "/imatges/logo.png",
-  "/imatges/sample.png",
-  "/imatges/servicios/precios.jpg",
-  "/manifest.json"
 ]
 
 self.addEventListener("install", installEvent => {
   installEvent.waitUntil(
-    caches.open(staticMess1ah).then(cache => {
-      cache.addAll(assets)
-    })
-  )
+    fetch("/assets.json")
+      .then((response) => response.json())
+      .then((assetsData) => {
+        const assetsToCache = [...mainAssets, ...assetsData.assets];
+        caches.open(staticMess1ah).then((cache) => {
+          cache.addAll(assetsToCache);
+        });
+      })
+  );
 })
 
 self.addEventListener("fetch", fetchEvent => {

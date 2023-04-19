@@ -1,0 +1,17 @@
+{
+    "assets": [
+        "/imatges/favicons/icon-72x72.png",
+        "/imatges/favicons/icon-96x96.png",
+        "/imatges/favicons/icon-128x128.png",
+        "/imatges/favicons/icon-144x144.png",
+        "/imatges/favicons/icon-152x152.png",
+        "/imatges/favicons/icon-192x192.png",
+        "/imatges/favicons/icon-384x384.png",
+        "/imatges/favicons/icon-512x512.png",
+
+        "/imatges/angelo_frontal.jpg",
+        "/imatges/logo.png",
+        "/imatges/precios.png"
+
+    ]
+}

@@ -194,33 +194,6 @@ nav a:hover {
     top: 7px;
   }
 }
-@media screen and (min-width: 2000px) {
-  header {
-    display: grid;
-    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
-    padding: 10px 12%;
-  }
-  .logo {
-    max-width: 400px;
-    grid-column: 2/3;
-  }
-  .nav-toggle-label {
-    display: none;
-  }
-  nav {
-    all: unset;
-    grid-column: 2/5;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  nav ul {
-    display: flex;
-  }
-  nav li {
-    margin-left: 3;
-  }
-}
 #reservas {
   justify-content: unset;
   padding: unset;
