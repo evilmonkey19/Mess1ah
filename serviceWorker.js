@@ -9,7 +9,7 @@ const assets = [
   "/imatges/logo.png",
   "/imatges/sample.png",
   "/imatges/servicios/precios.jpg",
-  "/manifest.webmanisfest"
+  "/manifest.webmanifest"
 ]
 
 self.addEventListener("install", installEvent => {
