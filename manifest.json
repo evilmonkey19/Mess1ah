@@ -1,7 +1,7 @@
 {
   "name": "Mess1ah Barber Studio",
   "short_name": "Mess1ah",
-  "start_url": "index.html",
+  "start_url": ".",
   "background_color": "#ffffff",
   "theme_color": "#db4938",
   "display": "standalone",
