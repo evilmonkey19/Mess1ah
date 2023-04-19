@@ -2,7 +2,7 @@
     "name": "Mess1ah Barber Studio",
     "short_name": "Mess1ah",
     "start_url": [
-      "https://dev.mess1ah.com"
+      "https://example.com"
     ],
     "id": "com.mess1ah",
     "display": "standalone",
