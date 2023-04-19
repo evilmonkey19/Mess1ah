@@ -22,8 +22,8 @@ Para desarrollar se recomienda utilizar [VSCode](https://code.visualstudio.com/)
 
 Para compilar los archivos PUG y Stylus mientras se desarrolla utilice los siguientes comandos:
 ```bash
-pug -w index.pug
-stylus --watch styles/styles.styl -o styles.css
+pug -w index.pug -o public
+stylus --watch styles/styles.styl -o public/styles.css
 ```
 
 ## Despliegue (prod)
