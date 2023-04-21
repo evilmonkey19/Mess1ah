@@ -1,94 +1,68 @@
 #reservas
-  justify-content: unset
   padding: unset
   border: unset
   margin: unset
-  display: grid
-  place-items: center
+  display: flex
+  justify-content: flex-start
   height: 100svh
-  background-image: linear-gradient(to bottom, transparent 90%, black 100%), url('imatges/angelo_frontal.jpg')
-  background-size: cover
-  background-position: center center
-  background-blend-mode: multiply
-  background-color:rgba(0, 0, 0, .75)
   position: relative
+
+// https://unused-css.com/blog/css-only-background-slider/
+  $noOfSlides = 4
+  $slideDuration = 5
+
+  .slider
+    width: 100%
+    height: 100svh
+    position: relative
+    overflow: hidden
+    display: grid
+    align-content: center
+    justify-content: center
+
+    .slide
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-size: cover
+      background-position: center center
+      background-blend-mode: multiply
+      background-color: rgba(0, 0, 0, .6)
+      animation: slide ($slideDuration * $noOfSlides)s infinite
+
+    for num in 1..$noOfSlides
+      .slide:nth-of-type({num})
+          background-image: linear-gradient(to bottom, transparent 80%, black 100%), url('/imatges/reservas/' + (num) + '.jpg')
+          animation-delay: -((num - 1) * $slideDuration)s
   
+    @keyframes slide
+      0%
+        transform: translateX(100%)
+        animation-timing-function: ease-in-out
+      10%, 25%
+        transform: none
+      35%
+        transform: translateX(-100%)
+        animation-timing-function: ease-in-out
+      100%
+        transform: translateX(-100%)
+
+
   .trabajos
+    margin: 0px 40px
     position: absolute
     bottom: 0
 
-  .trabajos a
-    color: #fff
+  .button
     text-decoration: none
-    transition: all 0.3s ease-in-out
-
-  .reservas-container
-    display: flex
-    flex-direction: column
-    justify-content: flex-start
-    align-items: center
-    gap: 20px
-
-    p
-      text-align: center
-      font-size: 24px
-      position: relative
-      margin: 0
-
-    a
-      position: relative
-
-      button
-        background-color: rgba(0,0,0, .5)
-        border: 2px solid #fff
-        color: #fff
-        padding: 5vw 10vh
-        font-size: 18px
-        transition: all 0.3s ease-in-out
-
-    .arrow-container
-      position: relative
-      height: 100px
-      width: 100px
-
-      .arrow,
-      .arrow:before
-        position: absolute
-        left: 50%
-
-      .arrow
-        width: 60px
-        height: 60px
-        top: 42.5%
-        margin: -30px 0 0 -30px
-        padding-right: 10px
-        -webkit-transform: rotate(45deg)
-        transform: rotate(45deg)
-        border-left: none
-        border-top: none
-        border-right: 2px #fff solid
-        border-bottom: 2px #fff solid
-
-      .arrow:before
-        content: ""
-        width: 30px
-        height: 30px
-        top: 50%
-        margin: -10px 0 0 -10px
-        border-left: none
-        border-top: none
-        border-right: 1px #fff solid
-        border-bottom: 1px #fff solid
-        animation-duration: 2s
-        animation-iteration-count: infinite
-        animation-name: arrow
-
-    @keyframes arrow
-      0%
-        opacity: 1
-      100%
-        opacity: 0
-        transform: translate(-10px, -10px)
+    position: relative
+    background-color: rgba(0,0,0, .75)
+    border: 2px solid white
+    color: white
+    padding: 25px 125px
+    font-size: 24px
 
 
 
@@ -98,17 +72,20 @@
     max-width: unset
     width: 100vw
 
-    .reservas-container p
+    img
+      top: -20%
+
+    p
       font-size: 32px
 
-    a button:hover
-      background-color: #fff
-      color: #000
 
-    .reservas-container a button
+    .button
       padding: 1.5em 4em
       font-size: 24px
 
+    .button:hover
+      background-color: #fff
+      color: #000
 
 
 

@@ -16,6 +16,9 @@ body {
   flex-direction: column;
   text-align: center;
 }
+body .no-transition {
+  transition: none !important;
+}
 h1 {
   font-size: 7vw;
   text-decoration: bold;
@@ -23,23 +26,26 @@ h1 {
 }
 a {
   color: #fff;
-  font-weight: 700;
-  font-size: 4.5vw;
+  font-size: 24px;
+  text-decoration: none;
 }
 p {
-  font-size: 4.5vw;
-  margin-top: 5px;
+  font-size: 24px;
+}
+i {
+  text-decoration: none;
+  color: #fff;
 }
 section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   place-items: center;
   border: 1px solid #fff;
   margin: 3vh 5vw;
-  scroll-margin-top: 16vh;
-  min-height: 82.5vh;
-  padding: 0 3vw;
+  scroll-margin-top: 2.5vh;
+  min-height: 95vh;
+  padding: 20px 20px;
 }
 #page-container {
   position: relative;
@@ -77,99 +83,111 @@ section {
 }
 header {
   position: fixed;
-  text-align: center;
   z-index: 999;
   width: 100%;
-  margin: 0;
-  height: 15vh;
-  display: grid;
-  align-items: center;
-  background-color: #000;
+  padding: 40px;
+  background-color: transparent;
 }
-.logo {
-  max-width: 67.5vw;
-  max-height: 11.5vh;
-  margin-left: 5vw;
-}
-#link-logo {
-  font-size: 0;
-}
-.nav-toggle {
+header .nav-toggle {
   display: none;
 }
-.nav-toggle-label {
+header .nav-toggle-label {
   position: absolute;
   top: 0;
-  left: 0;
-  margin-left: 1em;
+  right: 0;
+  padding: 0 1em 0 1em;
   height: 100%;
   display: flex;
   align-items: center;
+  background: rgba(0,0,0,0.7);
 }
-.nav-toggle-label span,
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
+header .nav-toggle-label span {
   display: block;
   background: #fff;
   height: 2px;
   width: 2em;
   border-radius: 2px;
   position: relative;
+  transition: background-color 0.5s;
 }
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
+header .nav-toggle-label span::before,
+header .nav-toggle-label span::after {
   content: '';
   position: absolute;
+  display: block;
+  background: #fff;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  transition: transform 0.5s, top 0.5s;
 }
-.nav-toggle-label span::before {
+header .nav-toggle-label span::before {
   bottom: 7px;
 }
-.nav-toggle-label span::after {
+header .nav-toggle-label span::after {
   top: 7px;
 }
-nav {
+header nav {
   position: absolute;
   text-align: left;
-  top: 100%;
-  left: 0;
+  right: 0;
   width: 100%;
-  transform: scale(1, 0);
-  transform-origin: top;
-  transition: transform 350ms ease-in-out;
-  background-color: #000;
+  height: 100vh;
+  transform-origin: left;
+  transition: transform 1s ease-in-out;
+  background: transparent;
+  display: grid;
+  align-content: center;
+  justify-content: center;
 }
-nav ul {
+header nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-nav li {
+header nav li {
   margin-bottom: 1em;
   margin-left: 1em;
 }
-nav a {
+header nav a {
   color: #fff;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 32px;
   text-transform: uppercase;
   opacity: 0;
 }
-nav a:hover {
+header nav a:hover {
   color: #fff;
 }
-.nav-toggle:checked ~ nav {
+header .nav-toggle:checked ~ nav {
   transform: scale(1, 1);
+  background-color: #000;
 }
-.nav-toggle:checked ~ nav a {
+header .nav-toggle:not(:checked) ~ nav {
+  pointer-events: none;
+}
+header .nav-toggle:checked ~ nav a {
   opacity: 1;
   transition: opacity 150ms ease-in-out;
+}
+header .nav-toggle:checked ~ .nav-toggle-label span {
+  background-color: transparent;
+}
+header .nav-toggle:checked ~ .nav-toggle-label span::before {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+header .nav-toggle:checked ~ .nav-toggle-label span::after {
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+header .container {
+  position: relative;
+  top: -40px;
 }
 @media screen and (min-width: 1180px) {
   header {
     padding: 0 25%;
-  }
-  .logo {
-    margin-left: 0;
   }
   .nav-toggle-label {
     margin-left: 2em;
@@ -195,125 +213,128 @@ nav a:hover {
   }
 }
 #reservas {
-  justify-content: unset;
   padding: unset;
   border: unset;
   margin: unset;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: flex-start;
   height: 100svh;
-  background-image: linear-gradient(to bottom, transparent 90%, #000 100%), url("imatges/angelo_frontal.jpg");
+  position: relative;
+}
+.slider {
+  width: 100%;
+  height: 100svh;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+.slider .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center center;
   background-blend-mode: multiply;
-  background-color: rgba(0,0,0,0.75);
-  position: relative;
+  background-color: rgba(0,0,0,0.6);
+  animation: slide 20s infinite;
 }
-#reservas .trabajos {
+.slider .slide:nth-of-type(1) {
+  background-image: linear-gradient(to bottom, transparent 80%, #000 100%), url("/imatges/reservas/1.jpg");
+  animation-delay: 0s;
+}
+.slider .slide:nth-of-type(2) {
+  background-image: linear-gradient(to bottom, transparent 80%, #000 100%), url("/imatges/reservas/2.jpg");
+  animation-delay: -5s;
+}
+.slider .slide:nth-of-type(3) {
+  background-image: linear-gradient(to bottom, transparent 80%, #000 100%), url("/imatges/reservas/3.jpg");
+  animation-delay: -10s;
+}
+.slider .slide:nth-of-type(4) {
+  background-image: linear-gradient(to bottom, transparent 80%, #000 100%), url("/imatges/reservas/4.jpg");
+  animation-delay: -15s;
+}
+@-moz-keyframes slide {
+  0% {
+    transform: translateX(100%);
+    animation-timing-function: ease-in-out;
+  }
+  10%, 25% {
+    transform: none;
+  }
+  35% {
+    transform: translateX(-100%);
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes slide {
+  0% {
+    transform: translateX(100%);
+    animation-timing-function: ease-in-out;
+  }
+  10%, 25% {
+    transform: none;
+  }
+  35% {
+    transform: translateX(-100%);
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@-o-keyframes slide {
+  0% {
+    transform: translateX(100%);
+    animation-timing-function: ease-in-out;
+  }
+  10%, 25% {
+    transform: none;
+  }
+  35% {
+    transform: translateX(-100%);
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes slide {
+  0% {
+    transform: translateX(100%);
+    animation-timing-function: ease-in-out;
+  }
+  10%, 25% {
+    transform: none;
+  }
+  35% {
+    transform: translateX(-100%);
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.trabajos {
+  margin: 0px 40px;
   position: absolute;
   bottom: 0;
 }
-#reservas .trabajos a {
-  color: #fff;
+.button {
   text-decoration: none;
-  transition: all 0.3s ease-in-out;
-}
-#reservas .reservas-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 20px;
-}
-#reservas .reservas-container p {
-  text-align: center;
-  font-size: 24px;
   position: relative;
-  margin: 0;
-}
-#reservas .reservas-container a {
-  position: relative;
-}
-#reservas .reservas-container a button {
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.75);
   border: 2px solid #fff;
   color: #fff;
-  padding: 5vw 10vh;
-  font-size: 18px;
-  transition: all 0.3s ease-in-out;
-}
-#reservas .reservas-container .arrow-container {
-  position: relative;
-  height: 100px;
-  width: 100px;
-}
-#reservas .reservas-container .arrow-container .arrow,
-#reservas .reservas-container .arrow-container .arrow:before {
-  position: absolute;
-  left: 50%;
-}
-#reservas .reservas-container .arrow-container .arrow {
-  width: 60px;
-  height: 60px;
-  top: 42.5%;
-  margin: -30px 0 0 -30px;
-  padding-right: 10px;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  border-left: none;
-  border-top: none;
-  border-right: 2px #fff solid;
-  border-bottom: 2px #fff solid;
-}
-#reservas .reservas-container .arrow-container .arrow:before {
-  content: "";
-  width: 30px;
-  height: 30px;
-  top: 50%;
-  margin: -10px 0 0 -10px;
-  border-left: none;
-  border-top: none;
-  border-right: 1px #fff solid;
-  border-bottom: 1px #fff solid;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-name: arrow;
-}
-@-moz-keyframes arrow {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-10px, -10px);
-  }
-}
-@-webkit-keyframes arrow {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-10px, -10px);
-  }
-}
-@-o-keyframes arrow {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-10px, -10px);
-  }
-}
-@keyframes arrow {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-10px, -10px);
-  }
+  padding: 25px 125px;
+  font-size: 24px;
 }
 @media screen and (min-width: 1180px) {
   #reservas {
@@ -321,16 +342,19 @@ nav a:hover {
     max-width: unset;
     width: 100vw;
   }
-  #reservas .reservas-container p {
+  #reservas img {
+    top: -20%;
+  }
+  #reservas p {
     font-size: 32px;
   }
-  #reservas a button:hover {
-    background-color: #fff;
-    color: #000;
-  }
-  #reservas .reservas-container a button {
+  #reservas .button {
     padding: 1.5em 4em;
     font-size: 24px;
+  }
+  #reservas .button:hover {
+    background-color: #fff;
+    color: #000;
   }
 }
 #horario {
@@ -404,18 +428,12 @@ nav a:hover {
 @import "https://fonts.googleapis.com/css2?family=PT+Sans&display=swap";
 #servicios {
   gap: 0;
-  min-height: unset;
-}
-#servicios .servicios-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 #servicios img {
   width: 100%;
   height: 100%;
   border-radius: 10px;
+  margin-top: 25%;
 }
 .carousel {
   min-height: 62.5vh;
@@ -876,7 +894,7 @@ nav a:hover {
 }
 footer {
   background-color: #000;
-  padding: 20px 0;
+  padding: 20px 40px;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -894,16 +912,9 @@ footer {
 .mapa i {
   padding-right: 20px;
 }
-.mapa a {
-  text-decoration: none;
-  color: #fff;
-}
 #social {
   display: flex;
   flex-direction: column;
-}
-#social p {
-  align-self: center;
 }
 #social .social-icons {
   display: grid;
@@ -911,10 +922,6 @@ footer {
   justify-content: center;
   gap: 20px;
   padding-top: 25px;
-}
-#social .social-icons a {
-  text-decoration: none;
-  color: #fff;
 }
 #social .social-icons i {
   text-decoration: none;

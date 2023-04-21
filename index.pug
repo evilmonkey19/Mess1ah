@@ -29,52 +29,48 @@ html(lang="es")
   - var urlFacebook   = 'https://www.facebook.com/mess1ahbarberstudio/'
   - var urlGoogleMaps = 'https://goo.gl/maps/fCmXVsGYv8Z25CLv8'
 
-  body
+  body.no-transition
     #page-container
       #content-wrap 
         header
-          a#link-logo(href='index.html')
-            img.logo(src='/imatges/logo.png', alt='Mess1ah Barber Studio')
-          input.nav-toggle(id='nav-toggle', type='checkbox')
+          input.nav-toggle(id='nav-toggle', type='checkbox', onchange='makeHeaderBlack()')
           nav
-            ul
-              li
-                a(href='#') Inicio
-              li
-                a(href=urlReservas) Reservas
-              li
-                a(href='#horario') Horario
-              li
-                a(href='#servicios') Servicios
-              li
-                a(href='#contacto') Contacto
+            .container
+              ul
+                li
+                  a(href='#') Inicio
+                li
+                  a(href=urlReservas) Reservas
+                li
+                  a(href='#horario') Horario
+                li
+                  a(href='#servicios') Servicios
+                li
+                  a(href='#contacto') Contacto
           label.nav-toggle-label(for='nav-toggle')
             span
         
         main#content
           section#reservas
-            .reservas-container
-              p Una vez hayas probado
-                br
-                | nuestros servicios,
-                br
-                | no querrás ir a ningún otro sitio
-              .arrow-container 
-                .arrow 
-              a(href=urlReservas)
-                button Reservas
-
-
-            .trabajos 
-              p Mira en &nbsp;
-                a(href=urlInstagram) Instagram
-                | &nbsp; nuestros últimos trabajos
-                | &nbsp;
-                a(href=urlInstagram)
-                  i.fa-brands.fa-instagram.fa-xl
+            .slider 
+              .slide
+              .slide
+              .slide
+              .slide
+              a(href=urlReservas class="button") Reservar
+              .trabajos
+                p Mira en 
+                  a(href=urlInstagram) 
+                    strong instagram
+                  |  nuestros últimos trabajos
+                  | &nbsp;
+                  a(href=urlInstagram)
+                    i.fa-brands.fa-instagram.fa-xl
 
           section#horario
-            h1 Horario
+            h1 
+              i.fa-regular.fa-calendar
+              |  Horario
             p
               strong Lunes a Sábado
               br
@@ -83,9 +79,8 @@ html(lang="es")
               | 15:00 - 20:00
 
           section#servicios
-            div.servicios-container
-              h1 Nuestros Servicios
-              img(src='/imatges/precios.png', alt='Precios')
+            h1 Nuestros Servicios
+            img(src='/imatges/precios.png', alt='Precios')
 
           //- section#servicios
           //-   h1 Servicios
@@ -155,6 +150,6 @@ html(lang="es")
         br
     
   script(src="https://kit.fontawesome.com/3ff2497f73.js" crossorigin="anonymous")
-  script(src="js/app.js")
-
-
+  script(src="/js/app.js")
+  script(src="/js/header.js")
+  script(src="/js/pageLoad.js")

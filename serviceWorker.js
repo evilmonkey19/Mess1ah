@@ -5,6 +5,8 @@ const mainAssets = [
   "/styles.css",
   "/manifest.json",
   "/js/app.js",
+  "/js/header.js",
+  "/js/pageLoad.js",
 ];
 
 self.addEventListener("install", (installEvent) => {
