@@ -9,9 +9,12 @@
         "/imatges/favicons/icon-384x384.png",
         "/imatges/favicons/icon-512x512.png",
 
-        "/imatges/angelo_frontal.jpg",
-        "/imatges/logo.png",
-        "/imatges/precios.png"
+        "/imatges/precios.png",
+
+        "/imatges/reservas/1.jpg",
+        "/imatges/reservas/2.jpg",
+        "/imatges/reservas/3.jpg",
+        "/imatges/reservas/4.jpg"
 
     ]
 }
