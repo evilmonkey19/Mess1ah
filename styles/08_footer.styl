@@ -1,5 +1,4 @@
 footer
-  background-color: #000
   padding: 20px 40px
   position: absolute
   bottom: 0
@@ -10,6 +9,8 @@ footer
 #upper-footer
   display: flex
   flex-direction: column
+  align-items: center
+  gap: 20px
 
 .mapa
   display: flex
@@ -23,6 +24,7 @@ footer
 #social
   display: flex
   flex-direction: column
+  align-items: center
 
 
   .social-icons
@@ -30,7 +32,6 @@ footer
     grid-template-columns: repeat(2, auto)
     justify-content: center
     gap: 20px
-    padding-top: 25px
 
     i
       text-decoration: none
@@ -51,33 +52,31 @@ footer
     flex-direction: row
     justify-content: center
     gap: 3rem
+    margin-left: -100px
 
     &::before
       content: ""
       position: absolute
       width: 1px
-      height: 50px
+      height: 75px
       background-color: #fff
-      margin-top: 10px
-
-  .mapa
-    padding-left: 2em
+      margin-left: 100px
 
     i
       transition: transform 0.3s ease-in-out
 
     i:hover
-      transform: scale(1.8)
+      transform: scale(1.5)
+
+  .mapa
+    justify-content: unset
 
   #social
-    padding-left: 50px
     flex-direction: row
-    justify-content: center
     gap: 15px
-    padding-right: 6em
 
   .social-icons i
     transition: transform 0.3s ease-in-out
 
   .social-icons i:hover
-    transform: scale(1.8)
+    transform: scale(1.5)

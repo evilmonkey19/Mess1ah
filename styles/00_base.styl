@@ -19,7 +19,7 @@ body
     transition: none !important
     
 h1
-  font-size: 7vw
+  font-size: 32px
   text-decoration: bold
   margin: 5px
 
@@ -43,9 +43,8 @@ section
   place-items: center
   border: 1px solid white
   margin: 3vh 5vw
-  scroll-margin-top: 2.5vh
-  min-height: 95vh
   padding: 20px 20px
+  scroll-margin-top: 10px
 
 #page-container
   position: relative
@@ -57,21 +56,23 @@ section
 #content
   top: 100%
 
+@media screen and (min-width: 820px)
+  h1
+    font-size: 48px
+    
+  p
+    font-size: 32px
+  
+  a
+    font-size: 32px
+
 @media screen and (min-width: 1180px)
+
   section
     width: 40vw
     overflow: hidden
     min-height: 30vh
     padding: 10px
-
-  h1
-    font-size: 36px
-
-  a
-    font-size: 24px
-
-  p
-    font-size: 24px
 
   #content
     display: grid
@@ -79,3 +80,5 @@ section
     align-items: center
     justify-items: center
     grid-template-columns: 1fr
+
+
