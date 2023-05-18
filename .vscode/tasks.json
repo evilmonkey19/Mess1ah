@@ -1,0 +1,36 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Compilar Stylus",
+        "type": "shell",
+        "command": "stylus -w styles/styles.styl -o styles.css",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": [],
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        },
+        "runOptions": { "runOn": "folderOpen" }
+      },
+      {
+        "label": "Compilar Pug",
+        "type": "shell",
+        "command": "pug -w index.pug",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": [],
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        },
+        "runOptions": { "runOn": "folderOpen" }
+      }
+    ]
+  }
+  
